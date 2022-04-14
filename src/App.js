@@ -1,19 +1,16 @@
-import {useSelector, useDispatch} from 'react-redux';
-import {selectToken, setKey} from './app/reducers/AuthToken'
-import {fetchKey} from './utils/fetchAPIKey'
+import { useSelector, useDispatch } from 'react-redux';
+import { selectToken } from './app/reducers/AuthToken'
+import { selectValidity } from './app/reducers/Validity';
+import { updateKey } from './utils/fetchAPIKey'
 
 export default function App() {
-   const token = useSelector(selectToken);
-
-   const dispatch = useDispatch();
+   // let token = useSelector(selectToken);
+   // let validity = useSelector(selectValidity)
+   // updateKey(token, validity,  useDispatch())
 
    return (
       <div className="App">
          <h1>Yodawg</h1>
-         <h1>{token}</h1>
-         <button onClick={async () => {
-            dispatch(setKey(await fetchKey()))
-         }}>Yodawg</button>
       </div>
    );
 }
