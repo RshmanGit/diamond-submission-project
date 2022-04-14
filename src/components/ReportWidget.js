@@ -1,5 +1,6 @@
 import IframeResizer from "iframe-resizer-react";
 import {useParams} from "react-router-dom"
+import GoToTop from './GoToTop';
 
 import * as React from "react";
 import { experimentalStyled as styled } from "@mui/material/styles";
