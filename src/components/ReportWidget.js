@@ -1,6 +1,7 @@
 
 import IframeResizer from "iframe-resizer-react";
 import {useParams} from "react-router-dom"
+import GoToTop from './GoToTop';
 
 
 import * as React from "react";
@@ -25,7 +26,7 @@ export default function ReportWidget() {
   const id=params.id;
   return (
     <div className="widget" style={{backgroundColor:"#000", margin:"0", padding:"0"}} >
-    <Link to= '/'> <h3 style={{color:"#0000aa", backgroundColor:"#333" ,padding:"20px"}}>{`< Back to Listing`}</h3></Link>
+     <h3 style={{color:"#0000aa", backgroundColor:"#333" ,padding:"20px"}}><Link to= '/'>{`< Back to Listing`}</Link></h3>
     <Box sx={{ flexGrow: 1 }}  >
       <Grid
         container
@@ -48,6 +49,7 @@ export default function ReportWidget() {
         ))}
       </Grid>
     </Box>
+    <GoToTop />
     </div>
   );
 }
