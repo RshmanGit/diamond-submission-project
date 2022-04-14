@@ -4,6 +4,8 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import IframeResizer from "iframe-resizer-react";
+import {Link } from "react-router-dom"
+
 
 
 
@@ -19,18 +21,24 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function ResponsiveGrid(props) {
+  const goToWidgets=()=>{
+    <Link to= '/333'/>
+  }
   return (
-    <Box sx={{ flexGrow: 1 }} >
+    
+    <Box sx={{ flexGrow: 1 }} style={{backgroundColor:"#000"}} >
       <Grid 
         container
-        spacing={{ xs: 2, sm: 2, md: 2 }}
+        spacing={{ xs: 2, sm: 2, md: 2 }} 
         columns={{ xs: 12, sm: 8, md: 12 }}
         
       >
         {Array.from(Array(10)).map((_, index) => (
           <Grid item xs={12} sm={12} md={3.9} key={index}  >
-            <Item id={props.id}  style={{overflow:"hidden" ,maxHeight:"350px",backgroundColor:"#333", borderColor:"#333"}} >
-              <IframeResizer
+            <Link to = "/333"><Item id={props.id}  style={{overflow:"hidden" ,maxHeight:"350px",backgroundColor:"#000", borderColor:"#333"}} 
+            >
+              
+              <IframeResizer 
                 name="Cutwise Widget"
                 width="600"
                 height="430"
@@ -40,10 +48,13 @@ export default function ResponsiveGrid(props) {
                 
                 
               />
+              
             </Item>
+            </Link>
           </Grid>
         ))}
       </Grid>
     </Box>
+    
   );
 }
