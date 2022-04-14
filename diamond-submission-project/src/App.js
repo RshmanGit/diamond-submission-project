@@ -1,7 +1,6 @@
 import ResponsiveGrid from "./components/ResponsiveGrid";
 import { BrowserRouter as Router, Route, Switch,Link } from "react-router-dom";
 import ReportWidget from "./components/ReportWidget";
-import { Navbar } from "./components/Navbar";
 
 
 export default function App() {
