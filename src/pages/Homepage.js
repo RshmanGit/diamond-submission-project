@@ -1,8 +1,23 @@
 import ResponsiveGrid from "../components/ResponsiveGrid";
 
-export default function Homepage(props) {
+import { useEffect, useState } from "react";
+
+import { fetchGrid } from "../utils/updateProductGrid";
+import { fetchKey } from "../utils/updateKey";
+
+export default function Homepage() {
+
+  const [ids, setIds] = useState([]);
+
+  useEffect(async() => {
+    const { access_token } = await fetchKey();
+    if(ids.length <= 0){
+      setIds(await fetchGrid(access_token));
+    }
+  }, [])
+  
     return (
-      <div className="App" style={{ backgroundColor: "#333" }}>
+      <div className="App" style={{ backgroundColor: "#131313" }}>
         <div
           style={{
             color: "white",
@@ -16,7 +31,7 @@ export default function Homepage(props) {
           </h1>
           <h1>DiBox 2.0 Performance Collection</h1>
         </div>
-        <ResponsiveGrid a={["333", "222", "111"]} />
+        <ResponsiveGrid ids={ids} />
       </div>
     );
   }
