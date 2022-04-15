@@ -28,7 +28,7 @@ export default function Homepage() {
                 <h1 style={{ flexBasis: '90%', textAlign: 'center' }}>DiBox 2.0 Performance Collection</h1>
                 <h1 style={{ flexBasis: '10%' }}> </h1>
             </div>
-            <ResponsiveGrid ids={['333', '333', '333', '333', '333', '333', '333', '333', '333']} />
+            <ResponsiveGrid ids={ids} />
         </div>
     );
 }
