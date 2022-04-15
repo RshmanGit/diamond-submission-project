@@ -8,7 +8,7 @@ export default async function fetchKey() {
     let response = await fetch(`${API_URL}api/oauth/v2/token?grant_type=password&username=${user}&password=${pass}&client_id=${clientId}&client_secret=${secret}`);
     response = await response.json();
     return {
-        access_token: response.access_token,
+        accessToken: response.access_token,
         validTill: (Math.floor(new Date().getTime() / 1000) + response.expires_in),
     };
 }
