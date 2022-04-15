@@ -1,44 +1,30 @@
 import IframeResizer from 'iframe-resizer-react';
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import * as React from 'react';
-import { experimentalStyled as styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
 import GoToTop from './GoToTop';
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
+const widgetURL = process.env.REACT_APP_WIDGET_API_URL;
 
-export default function ReportWidget() {
-    const params = useParams();
-    const { id } = params;
+export default function ReportWidget(props) {
+    const { id } = props;
+
     return (
         <div className="widget" style={{ backgroundColor: '#000', margin: '0', padding: '0' }}>
             <Link to="/">
-                {' '}
-                <h3 style={{ color: '#0000aa', backgroundColor: '#333', padding: '20px' }}>{'< Back to Listing'}</h3>
+                <h3 style={{ color: '#fff', backgroundColor: '#333', padding: '20px' }}>{'< Back to Listing'}</h3>
             </Link>
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid item xs={12} sm={12} md={12} style={{ padding: 0 }}>
-                    <Item style={{ padding: 0 }}>
-                        <IframeResizer
-                            name="Cutwise Widget"
-                            width="100%"
-                            height="1800px"
-                            frameBorder="0"
-                            src={`https://widget.cutwise.com/report/v1/${id}`}
-                            allowFullScreen
-                        />
-                    </Item>
-                </Grid>
-            </Box>
+            <IframeResizer
+                name="Cutwise Widget"
+                width="1366"
+                height="768"
+                frameBorder="0"
+                style={{
+                    width: '1px', minWidth: '100%',
+                }}
+                src={`${widgetURL}/report/v1/${id}`}
+                loading="lazy"
+            />
             <GoToTop />
         </div>
     );

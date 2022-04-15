@@ -17,17 +17,18 @@ export default function Homepage() {
     return (
         <div className="App" style={{ backgroundColor: '#131313' }}>
             <div style={{
-                color: 'white', border: '2px', display: 'flex', marginBottom: '2%',
+                color: 'white', border: '2px', display: 'flex', marginBottom: '2%', justifyContent: 'center', justifyItems: 'center',
             }}
             >
-                <h1 style={{ marginRight: '20%', marginLeft: '2%' }}>
-            Cutw
+                <h1 style={{ flexBasis: '10%', textAlign: 'center' }}>
+                    Cutw
                     <span style={{ color: 'orange' }}>i</span>
-se
+                    se
                 </h1>
-                <h1>DiBox 2.0 Performance Collection</h1>
+                <h1 style={{ flexBasis: '90%', textAlign: 'center' }}>DiBox 2.0 Performance Collection</h1>
+                <h1 style={{ flexBasis: '10%' }}> </h1>
             </div>
-            <ResponsiveGrid ids={ids} />
+            <ResponsiveGrid ids={['333', '333', '333', '333', '333', '333', '333', '333', '333']} />
         </div>
     );
 }
