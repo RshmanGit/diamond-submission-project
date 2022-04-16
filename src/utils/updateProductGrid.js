@@ -5,10 +5,9 @@ export default async function fetchGrid(token) {
     try {
         let response = await fetch(`${API_URL}api/v4/diamond?limit=9&offset=0`, {
             method: 'GET',
-            withCredentials: true,
-            credentials: 'include',
             headers: {
                 Authorization: bearer,
+                Origin: 'http://localhost:3000/',
             },
         });
         response = await response.json();
