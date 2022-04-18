@@ -17,7 +17,7 @@ export default function ReportWidget(props) {
             <IframeResizer
                 name="Cutwise Widget"
                 width="1366"
-                height="768"
+                height="1800"
                 frameBorder="0"
                 style={{
                     width: '1px', minWidth: '100%',
