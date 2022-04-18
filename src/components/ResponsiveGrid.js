@@ -7,8 +7,8 @@ import PerformanceWidget from './performanceWidget';
 export default function ResponsiveGrid(props) {
     const { ids } = props;
     return (
-        <div className="grid">
-            <div>
+        <div>
+            <div className="grid-container">
                 {ids.map((id) => (
                     <PerformanceWidget id={id} />
                 ))}

@@ -1,3 +1,31 @@
+.card {
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom:5px;
+    overflow: hidden;
+}
+
+.performanceWidget{
+    position: relative; 
+    top: -40px;
+}
+
+.detailView {
+    padding: 5px;
+    max-width: 100px;
+    color: black;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.detailView:hover {
+    box-shadow: 0 0 10px orange;
+}
+
 .detailLink {
     background-color: '#131313';
     position: 'relative';
@@ -7,13 +35,4 @@
 
 .detailLink:hover {
     border-color: 'orange'
-}
-
-.widget {
-    background-color: '#131313';
-    text-align: 'center';
-    color: '#000';
-    overflow: 'hidden';
-    max-height: '350px';
-    border-color: '#131313';
 }
